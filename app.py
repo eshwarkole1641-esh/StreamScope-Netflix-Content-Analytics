@@ -10,6 +10,7 @@ st.caption("Explore catalogue composition, release trends, genres, countries, an
 ROOT = Path(__file__).parent
 DEFAULT_DATA = ROOT / "data" / "netflix_titles.csv"
 DEMO_DATA = ROOT / "data" / "demo_netflix_titles.csv"
+DATASET_URL = "https://raw.githubusercontent.com/japnitahuja/netflix-data-analysis/main/netflix_titles.csv"
 uploaded = st.sidebar.file_uploader("Upload the full Netflix titles CSV", type=["csv"])
 
 @st.cache_data(show_spinner=False)
@@ -24,9 +25,13 @@ try:
         df = read_csv(DEFAULT_DATA)
         source = "Full dataset file"
     else:
-        df = read_csv(DEMO_DATA)
-        source = "DEMO DATA — illustrative rows only"
-        st.sidebar.warning("Showing only a tiny demo dataset. Upload the full Netflix CSV for meaningful analysis.")
+        try:
+            df = read_csv(DATASET_URL)
+            source = "Historical Netflix titles snapshot (public CSV mirror)"
+        except Exception:
+            df = read_csv(DEMO_DATA)
+            source = "DEMO DATA — illustrative rows only"
+            st.sidebar.warning("The full dataset could not be fetched. Upload the full CSV or use the tiny demo dataset.")
 except Exception as exc:
     st.error(f"Could not read the CSV: {exc}")
     st.stop()
