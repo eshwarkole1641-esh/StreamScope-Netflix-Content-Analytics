@@ -1,0 +1,6 @@
+show_id,type,title,director,cast,country,date_added,release_year,rating,duration,listed_in,description
+d1,Movie,Example Journey,A. Demo,Actor A,United States,"January 5, 2020",2020,TV-MA,105 min,"Drama, Independent Movies",Illustrative demo row.
+d2,TV Show,Campus Stories,B. Demo,Actor B,India,"March 12, 2019",2019,TV-14,2 Seasons,"International TV Shows, Dramas",Illustrative demo row.
+d3,Movie,Ocean Planet,C. Demo,,United Kingdom,"November 2, 2018",2018,PG,92 min,"Documentaries, Science & Nature TV",Illustrative demo row.
+d4,TV Show,Kitchen Challenge,D. Demo,Actor D,United States,"April 21, 2022",2022,TV-PG,3 Seasons,Reality TV,Illustrative demo row.
+d5,Movie,Laugh Out Loud,E. Demo,Actor E,India,"August 19, 2017",2017,TV-14,98 min,Comedies,Illustrative demo row.
