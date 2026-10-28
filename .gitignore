@@ -1,0 +1,9 @@
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.env
+.DS_Store
+outputs/
+reports/findings.txt
+data/netflix_titles.csv
